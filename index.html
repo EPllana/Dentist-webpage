@@ -81,30 +81,37 @@
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Home</a>
-            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">About Us</a>
-            <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Services</a>
-            <a href="#doctors" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">The Doctors</a>
-            <a href="#departments" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Departments</a>
-            <a href="#gallery" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Gallery</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Contact</a>
-            <a href="#blog" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Blog</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray shadow-lg">
+            <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">Home</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">About Us</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">Services</a>
+            <a href="#doctors" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">The Doctors</a>
+            <a href="#departments" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">Departments</a>
+            <a href="#gallery" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">Gallery</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">Contact</a>
+            <a href="#blog" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-600 hover:text-primary">Blog</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg bg-cover bg-center relative" style="background-image: url(background.png);">
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="container mx-auto px-4 h-[calc(100vh-150px)] min-h-[400px] flex items-center relative z-10">
+    <section class="relative h-[calc(100vh-150px)] min-h-[400px] overflow-hidden">
+        <!-- Background Image as img tag -->
+        <img src="/background.png" alt="Background" class="absolute inset-0 w-full h-full object-cover z-0" />
+    
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+    
+        <!-- Content -->
+        <div class="container mx-auto px-4 h-full flex items-center relative z-20">
             <div class="md:w-1/2 text-white">
-                <h2 class="text-2xl md:text-3xl font-semibold"stt>PERFECT SMILE!</h2>
-                <h1 class="text-4xl md:text-6xl font-bold my-4 leading-tight" style="background-color:#00BCD4;">DENTACARE FOR YOU</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold">PERFECT SMILE!</h2>
+                <h1 class="text-4xl md:text-5xl font-bold my-4 leading-tight bg-cyan-500 inline-block px-2">DENTACARE FOR YOU</h1>
                 <p class="mb-8 text-lg">We offer safe and friendly services in one of the most renowned hospitals in the world.</p>
                 <a href="#" class="bg-primary text-white font-semibold py-3 px-8 rounded-md hover:bg-primary-darker transition duration-300">See Details</a>
             </div>
         </div>
     </section>
+    
 
     <!-- Features Bar -->
     <section class="bg-primary text-white py-10">
@@ -130,8 +137,9 @@
 
     <!-- Welcome Section -->
     <section class="py-16 bg-white" style="display: flex;" id="about">
-        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-start" style="display: flex;">
-            <div class="md:col-span-2" style="width: 30%;">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row gap-8 items-start">
+            <div class="w-full md:w-[30%] md:col-span-2">
+
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome to <span class="text-primary">DentCare Clinic</span></h2>
                 <p class="text-gray-600 mb-4 leading-relaxed">One of the most popular dental clinics in the region, DentCare takes pride in providing safe care for all our patients.</p>
                 <p class="text-gray-600 mb-6 leading-relaxed">At DentCare, we believe that dental care is not just about dental health, but also about your overall well-being. That's why we offer specialized services.</p>
