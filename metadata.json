@@ -1,0 +1,5 @@
+{
+  "name": "DentCare Clinic Static Homepage",
+  "description": "A single-page static website for a dental clinic, replicating a provided design. Built with HTML, Tailwind CSS, and minimal JavaScript.",
+  "requestFramePermissions": []
+}

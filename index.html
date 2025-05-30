@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-P">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentCare Clinic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+  scroll-behavior: smooth;
+}
+
+        /* Custom styles for background images and specific tweaks */
+        .hero-bg {
+            background-image: url('https://picsum.photos/seed/hero/1600/800'); /* Placeholder */
+        }
+        .testimonial-bg {
+            background-image: url('https://picsum.photos/seed/testimonialbg/1600/600'); /* Placeholder */
+        }
+        /* Primary color from the design (a bright teal) */
+        :root {
+            --primary-color: #00BCD4; /* A common teal, adjust if needed */
+            --primary-color-darker: #0097A7;
+        }
+        .bg-primary { background-color: var(--primary-color); }
+        .text-primary { color: var(--primary-color); }
+        .border-primary { border-color: var(--primary-color); }
+        .hover\:bg-primary-darker:hover { background-color: var(--primary-color-darker); }
+
+        /* Additional Tailwind customizations if needed via @layer */
+        /* Ensure Tailwind loads first */
+        /* Example: Add a custom font if available via CDN or local */
+        /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body { font-family: 'Roboto', sans-serif; } */
+
+        /* Specific icon styling */
+        .icon-teal { color: var(--primary-color); }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00BCD4', // Example: Bright Teal
+              'primary-darker': '#0097A7',
+              'custom-teal': '#10B9B0', // A teal similar to Tailwind's teal-500
+              'light-blue- dentists': '#E0F7FA' // Light blue for doctor background
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-700 antialiased">
+
+    <!-- Top Bar -->
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-primary">
+                   <img src="logo.svg" alt="" style="width: 60px;">
+                </a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium border-b-2 border-primary pb-1">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium">About Us</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium">Services</a>
+                    <a href="#doctors" class="text-gray-700 hover:text-primary font-medium">The Doctors</a>
+                    <a href="#departments" class="text-gray-700 hover:text-primary font-medium">Departments</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-primary font-medium">Gallery</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+                    <a href="#blog" class="text-gray-700 hover:text-primary font-medium">Blog</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-button" class="text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Home</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">About Us</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Services</a>
+            <a href="#doctors" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">The Doctors</a>
+            <a href="#departments" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Departments</a>
+            <a href="#gallery" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Gallery</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Contact</a>
+            <a href="#blog" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary">Blog</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg bg-cover bg-center relative" style="background-image: url(background.png);">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 h-[calc(100vh-150px)] min-h-[400px] flex items-center relative z-10">
+            <div class="md:w-1/2 text-white">
+                <h2 class="text-2xl md:text-3xl font-semibold"stt>PERFECT SMILE!</h2>
+                <h1 class="text-4xl md:text-6xl font-bold my-4 leading-tight" style="background-color:#00BCD4;">DENTACARE FOR YOU</h1>
+                <p class="mb-8 text-lg">We offer safe and friendly services in one of the most renowned hospitals in the world.</p>
+                <a href="#" class="bg-primary text-white font-semibold py-3 px-8 rounded-md hover:bg-primary-darker transition duration-300">See Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="bg-primary text-white py-10">
+        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                <h3 class="font-semibold text-lg">Dental Emergency</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <h3 class="font-semibold text-lg">Online Appointment</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-3" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.001 3.012A2.25 2.25 0 018.25 1h3.5a2.25 2.25 0 012.249 2.012A10.463 10.463 0 0015 3c.414 0 .797.042 1.173.121A2.25 2.25 0 0118 5.25v3.501a2.25 2.25 0 01-1.751 2.183 10.462 10.462 0 00-.122 1.172c0 .414.042.797.121 1.173A2.25 2.25 0 0116.25 15h-3.5a2.25 2.25 0 01-2.249-2.012A10.463 10.463 0 0010 13c-.414 0-.797-.042-1.173-.121A2.25 2.25 0 017 10.75V7.249a2.25 2.25 0 011.751-2.183 10.462 10.462 0 00.122-1.172c0-.414-.042-.797-.121-1.173A2.25 2.25 0 015.75 1H2.25A2.25 2.25 0 000 3.25v10.5A2.25 2.25 0 002.25 16h10.5a2.25 2.25 0 002.25-2.25V9h2.75A2.25 2.25 0 0020 6.75V3.25A2.25 2.25 0 0017.75 1h-2.749A10.486 10.486 0 0014 1.006 10.475 10.475 0 0010 0C7.79 0 5.824.765 4.469 2.013 4.176 2.004 3.88 2 3.577 2A2.25 2.25 0 001.565 3.87L1.5 3.902V3.25c0-.085.004-.168.012-.25A2.25 2.25 0 013.75 1h.001L6.001 3.012zM10 8.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd" /></svg>
+                <h3 class="font-semibold text-lg">Dental Experts</h3>
+            </div>
+            <div class="flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <h3 class="font-semibold text-lg">24/7 Dental Availability</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-16 bg-white" style="display: flex;" id="about">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-start" style="display: flex;">
+            <div class="md:col-span-2" style="width: 30%;">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome to <span class="text-primary">DentCare Clinic</span></h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">One of the most popular dental clinics in the region, DentCare takes pride in providing safe care for all our patients.</p>
+                <p class="text-gray-600 mb-6 leading-relaxed">At DentCare, we believe that dental care is not just about dental health, but also about your overall well-being. That's why we offer specialized services.</p>
+                <img src="signature.png" alt="Signature" class="mb-6 h-12">
+                <a href="#" class="border border-primary text-primary font-semibold py-2 px-6 rounded-md hover:bg-primary hover:text-white transition duration-300">Read More</a>
+            </div>
+            <div class="md:col-span-1 grid grid-cols-1 gap-6">
+                <img src="alone-doctor.png" alt="Doctor welcoming" class="rounded-lg shadow-lg w-full object-cover">
+            </div>
+            <div>
+                 <div class="bg-gray-50 p-6 rounded-lg shadow" style="margin-bottom:30px">
+                    <h4 class="text-xl font-semibold text-gray-700 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Working Hours
+                    </h4>
+                    <ul class="text-gray-600 space-y-1 text-sm">
+                        <li class="flex justify-between border-b pb-1"><span>Monday - Friday:</span> <span class="font-medium">09.00 AM - 08.00 PM</span></li>
+                        <li class="flex justify-between border-b pb-1"><span>Saturday:</span> <span class="font-medium">10.00 AM - 04.00 PM</span></li>
+                        <li class="flex justify-between"><span>Sunday:</span> <span class="font-medium">09.30 AM - 06.00 PM</span></li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h4 class="text-xl font-semibold text-gray-700 mb-3 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.79 4 4s-1.79 4-4 4c-1.742 0-3.223-.835-3.772-2M12 12H4m4 4H4m4-4H4m12 4h-4m4-4h-4m4-4h-4M12 6V2M12 22v-4" /></svg>
+                        Need Help?
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">Schedule an appointment today to get help from our experts.</p>
+                    <a href="#" class="bg-primary text-white text-sm font-semibold py-2 px-4 rounded-md hover:bg-primary-darker transition duration-300 block text-center">View Clinic Details</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50" id="services">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Services</h2>
+            <div class="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">At DentCare, we care for the health and beauty of your smile with professional services and modern treatments.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Item 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /><path d="M3 3h1M3 7h1M3 11h1M3 15h1M20 3h-1M20 7h-1M20 11h-1M20 15h-1M7 21h10M7 3h10" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Check-up and Consultation</h3>
+                    <p class="text-gray-600 text-sm">Professional visit to diagnose the health of teeth and gums, identify problems, and create a personalized treatment plan according to your needs.</p>
+                </div>
+                 <!-- Service Item 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M5 17v4m-2-2h4m6-14v4m-2-2h4m6 6v4m-2-2h4M9 3v4M7 5h4M9 17v4m-2-2h4" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Teeth Cleaning and Whitening</h3>
+                    <p class="text-gray-600 text-sm">Removal of bacterial plaque and tartar to prevent dental diseases. Offering whitening treatments for a brighter and more radiant smile.</p>
+                </div>
+                <!-- Service Item 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.5 9.5A2.5 2.5 0 0012 7a2.5 2.5 0 00-2.5 2.5c0 1.043.65 1.936 1.567 2.273.105.038.215.062.333.077V14.5h1.2V11.85c.118-.015.228-.039.333-.077.917-.337 1.567-1.23 1.567-2.273z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Fillings</h3>
+                    <p class="text-gray-600 text-sm">Repair of teeth damaged by cavities with quality materials that match the natural color of the teeth, restoring functionality and aesthetics.</p>
+                </div>
+                <!-- Service Item 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Dental Implants</h3>
+                    <p class="text-gray-600 text-sm">Replacement of lost teeth with titanium implants, which ensure maximum stability, full functionality, and a long-lasting natural appearance.</p>
+                </div>
+                <!-- Service Item 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Orthodontics (Dental Braces)</h3>
+                    <p class="text-gray-600 text-sm">Correction of teeth position and bite alignment with fixed or transparent braces, for a healthy and aesthetic smile.</p>
+                </div>
+                <!-- Service Item 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 016-6h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Oral Surgery and Tooth Extraction</h3>
+                    <p class="text-gray-600 text-sm">Extraction of damaged or irreparable teeth and specialized oral surgical interventions for advanced and safe treatments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="py-16 bg-white" id="doctors">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">OUR DOCTORS</h2>
+            <div class="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">At DentCare, our qualified doctors offer specialized and safe dental treatments for your smile.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Doctor 1 -->
+                <div class="bg-light-blue-dentists rounded-lg overflow-hidden shadow-lg group">
+                    <img src="doctor1.png" alt="Dr. Arben Kastrati" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. John Macintosh</h3>
+                        <p class="text-primary">General Dentist</p>
+                        <div class="mt-3 h-0.5 bg-primary w-1/4 mx-auto"></div>
+                    </div>
+                </div>
+                <!-- Doctor 2 -->
+                <div class="bg-light-blue-dentists rounded-lg overflow-hidden shadow-lg group">
+                    <img src="doctor2.png" alt="Dr. Flutura Hoxha" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Anna Becker</h3>
+                        <p class="text-primary">Orthodontics Specialist</p>
+                        <div class="mt-3 h-0.5 bg-primary w-1/4 mx-auto"></div>
+                    </div>
+                </div>
+                <!-- Doctor 3 -->
+                <div class="bg-light-blue-dentists rounded-lg overflow-hidden shadow-lg group">
+                    <img src="doctor3.png" alt="Dr. Arben Kastrati" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Leana Wen </h3>
+                        <p class="text-primary">Dental Surgeon</p>
+                         <div class="mt-3 h-0.5 bg-primary w-1/4 mx-auto"></div>
+                    </div>
+                </div>
+                <!-- Doctor 4 -->
+                <div class="bg-light-blue-dentists rounded-lg overflow-hidden shadow-lg group">
+                    <img src="doctor4.png" alt="Dr. Besnik Dema" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Dr. Jonas Fischer</h3>
+                        <p class="text-primary">Dental Aesthetics Specialist</p>
+                         <div class="mt-3 h-0.5 bg-primary w-1/4 mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <!-- PATIENTS TREATED: users icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                </svg>
+                <span class="text-5xl font-bold block">5,200</span>
+                <span class="text-lg">PATIENTS TREATED</span>
+            </div>
+            <div>
+                <!-- SERVICES OFFERED: squares-2x2 icon (represents categories/multiple items) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                </svg>
+                <span class="text-5xl font-bold block">15</span>
+                <span class="text-lg">SERVICES OFFERED</span>
+            </div>
+            <div>
+                <!-- TREATMENTS PERFORMED: beaker icon (science/procedure) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto mb-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 5.25L16.5 7.5V18.75c0 .414-.336.75-.75.75h-9a.75.75 0 01-.75-.75V7.5L8.25 5.25m6 0L12 2.25 8.25 5.25M14.25 5.25V1.5M8.25 5.25V1.5m0 0H6.75m0 0A.75.75 0 006 2.25v.75" />
+                </svg>
+                <span class="text-5xl font-bold block">10,000</span>
+                <span class="text-lg">TREATMENTS PERFORMED</span>
+            </div>
+      <!-- Positive Results -->
+<div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8v8" />
+    </svg>
+    <span class="text-5xl font-bold block">98%</span>
+    <span class="text-lg">POSITIVE RESULTS</span>
+  </div>
+  
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="py-16 bg-white" id="departments">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">DEPARTMENTS</h2>
+                <div class="w-20 h-1 bg-primary mx-auto my-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">At DentCare, each department is specialized to offer the highest quality dental treatments and services.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button class="bg-primary text-white py-2 px-6 rounded-md font-medium">Dental</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-6 rounded-md hover:bg-primary hover:text-white hover:border-primary transition">Gentle Smile</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-6 rounded-md hover:bg-primary hover:text-white hover:border-primary transition">Dentures</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-6 rounded-md hover:bg-primary hover:text-white hover:border-primary transition">X-Ray Imaging</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-6 rounded-md hover:bg-primary hover:text-white hover:border-primary transition">Surgical Treatment</button>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Dental Care</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Dental care is essential for good overall health. Dental treatments include teeth cleaning, fillings, dentures, and dental surgery, which help maintain health.</p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Dental care is essential for good overall health. Dental treatments include teeth cleaning, fillings, dentures, and dental surgery, which help maintain health.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> QUALIFIED DOCTORS</li>
+                        <li class="flex items-center text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> X-RAY MONITORING</li>
+                        <li class="flex items-center text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> EMERGENCY SERVICE</li>
+                        <li class="flex items-center text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> ORAL CARE</li>
+                        <li class="flex items-center text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> TEETH CLEANING</li>
+                         <li class="flex items-center text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg> DENTURE PLACEMENT</li>
+                    </ul>
+                    <a href="#" class="bg-primary text-white font-semibold py-3 px-8 rounded-md hover:bg-primary-darker transition duration-300">View Details</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="doctor6.png" alt="Dental Care Department" class="rounded-lg shadow-xl w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">PRICING</h2>
+            <div class="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">At DentCare, we offer high-quality dental services at affordable prices for everyone.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pricing Card 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary" style="justify-content: center; align-items:center;">
+                    <img src="teeth.svg" alt="" style="max-width: 100px; justify-self: center;">
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Teeth Treatment</h3>
+                    <p class="text-gray-600 text-sm mb-4">Professional treatment for healthy teeth.</p>
+                    <div class="text-4xl font-bold text-primary mb-1">24%</div>
+                    <p class="text-gray-700 font-semibold mb-6">Discount</p>
+                    <a href="#" class="bg-primary text-white font-semibold py-2 px-6 rounded-md hover:bg-primary-darker transition duration-300">BOOK NOW</a>
+                </div>
+                <!-- Pricing Card 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Whitening Package</h3>
+                    <p class="text-gray-600 text-sm mb-4">Effective whitening for a bright smile.</p>
+                    <div class="text-4xl font-bold text-primary mb-1">15%</div>
+                    <p class="text-gray-700 font-semibold mb-6">Discount</p>
+                    <a href="#" class="bg-primary text-white font-semibold py-2 px-6 rounded-md hover:bg-primary-darker transition duration-300">BOOK NOW</a>
+                </div>
+                <!-- Pricing Card 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">X-Ray</h3>
+                    <p class="text-gray-600 text-sm mb-4">X-Ray service for an accurate diagnosis.</p>
+                    <div class="text-4xl font-bold text-primary mb-1">30%</div>
+                    <p class="text-gray-700 font-semibold mb-6">Discount</p>
+                    <a href="#" class="bg-primary text-white font-semibold py-2 px-6 rounded-md hover:bg-primary-darker transition duration-300">BOOK NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-bg bg-cover bg-center py-20 relative">
+        <div class="absolute inset-0 bg-primary opacity-80"></div>
+        <div class="container mx-auto px-4 text-center text-white relative z-10">
+            <h2 class="text-3xl font-bold mb-4">HAPPY CLIENTS SAY</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.642-4.33 5.362.283-1.115.984-2.243 2.225-3.153 1.241-.91 2.775-1.682 4.33-2.225l.984 2.126c-2.859.279-5.494 2.126-6.251 4.725-.756 2.6-.442 5.236 1.049 7.607l-2.079.756c-1.546-2.479-1.704-5.236-.984-7.832zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.642-4.33 5.362.283-1.115.984-2.243 2.225-3.153 1.241-.91 2.775-1.682 4.33-2.225l.984 2.126c-2.859.279-5.494 2.126-6.251 4.725-.756 2.6-.442 5.236 1.049 7.607l-2.079.756c-1.546-2.479-1.704-5.236-.984-7.832z"/></svg>
+            <p class="text-xl italic max-w-3xl mx-auto mb-6">"Excellent service and very professional staff! My dental treatment was comfortable and the results exceeded my expectations. I recommend DentCare to anyone looking for quality dental care!" - Arber K.</p>
+            <h4 class="text-xl font-semibold">Catherine Grace</h4>
+            <p class="text-sm">Dentist</p>
+            <div class="flex justify-center space-x-2 mt-8">
+                <button class="h-3 w-3 bg-white rounded-full opacity-50 hover:opacity-100"></button>
+                <button class="h-3 w-3 bg-white rounded-full opacity-100"></button>
+                <button class="h-3 w-3 bg-white rounded-full opacity-50 hover:opacity-100"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-white" id="gallery">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">GALLERY</h2>
+            <div class="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">See our modern facilities and the results of our dental treatments for a healthy and beautiful smile!</p>
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button class="bg-primary text-white py-2 px-5 rounded-md text-sm font-medium">All</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-5 rounded-md text-sm hover:bg-primary hover:text-white hover:border-primary transition">Dental</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-5 rounded-md text-sm hover:bg-primary hover:text-white hover:border-primary transition">Operation</button>
+                <button class="text-gray-600 border border-gray-300 py-2 px-5 rounded-md text-sm hover:bg-primary hover:text-white hover:border-primary transition">X-Ray</button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img src="dent1.jpeg" alt="Gallery Image 1" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent2.jpeg" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent3.jpeg" alt="Gallery Image 3" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent4.webp" alt="Gallery Image 4" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent8.jpeg" alt="Gallery Image 5" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent6.jpeg" alt="Gallery Image 6" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent7.jpeg" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+                <img src="dent5.jpeg" alt="Gallery Image 8" class="rounded-lg shadow-md w-full h-48 object-cover hover:opacity-80 transition-opacity">
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Form Section -->
+    <section class="py-16 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-1">Book an Appointment <span class="text-primary">Now!</span></h2>
+                    <div class="w-20 h-1 bg-primary my-3 mb-6"></div>
+                    <form action="#" class="space-y-5">
+                        <input type="text" placeholder="Enter Name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            <input type="tel" placeholder="Phone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        </div>
+                         <div class="grid sm:grid-cols-2 gap-5">
+                            <select class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-gray-500">
+                                <option>- Select Your Services -</option>
+                                <option>Check-up</option>
+                                <option>Cleaning</option>
+                                <option>Whitening</option>
+                                <option>Implants</option>
+                            </select>
+                            <input type="date" placeholder="Reservation Date" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-gray-500">
+                        </div>
+                        <textarea placeholder="Enter Message" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+                        <button type="submit" class="w-full bg-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-primary-darker transition duration-300">Submit Now</button>
+                    </form>
+                </div>
+                <div class="hidden md:block">
+                    <img src="appointmnt-doctors3.png" alt="Doctors for contact" class="rounded-lg shadow-xl object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-16 bg-white" id="blog">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800">News</h2>
+            <div class="w-20 h-1 bg-primary mx-auto my-4"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">Dentcare offers modern teeth whitening services and implants at promotional prices. Book an appointment today for a perfect smile!</p>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <!-- News Card 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="news1.jpeg" alt="News 1" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Quick Whitening</h3>
+                        <div class="text-xs text-gray-500 mb-3">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7s-8-3.134-8-7 3.582-7 8-7 8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0H9v2h2V9z" clip-rule="evenodd" /></svg>214 Comments</span>
+                            <span class="ml-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.932-1.526l.781-4.625a2 2 0 00-1.932-2.474H12V6.5a2 2 0 00-2-2h-1a2 2 0 00-2 2v3.833H6z" /></svg>895 Likes</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Dentcare now offers teeth whitening with the most advanced technology, ensuring fast and painless results.</p>
+                        <a href="#" class="text-primary font-medium hover:underline text-sm">View details...</a>
+                    </div>
+                </div>
+                <!-- News Card 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="news2.jpeg" alt="News 2" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Free Consultations This Month</h3>
+                         <div class="text-xs text-gray-500 mb-3">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7s-8-3.134-8-7 3.582-7 8-7 8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0H9v2h2V9z" clip-rule="evenodd" /></svg>214 Comments</span>
+                            <span class="ml-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.932-1.526l.781-4.625a2 2 0 00-1.932-2.474H12V6.5a2 2 0 00-2-2h-1a2 2 0 00-2 2v3.833H6z" /></svg>895 Likes</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">For dental health month, Dentcare offers free consultations for all patients. Register to receive the offer.</p>
+                        <a href="#" class="text-primary font-medium hover:underline text-sm">View details...</a>
+                    </div>
+                </div>
+                <!-- News Card 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                    <img src="news3.png" alt="News 3" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Implants 10 Year Warranty</h3>
+                         <div class="text-xs text-gray-500 mb-3">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7s-8-3.134-8-7 3.582-7 8-7 8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0H9v2h2V9z" clip-rule="evenodd" /></svg>214 Comments</span>
+                            <span class="ml-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.932-1.526l.781-4.625a2 2 0 00-1.932-2.474H12V6.5a2 2 0 00-2-2h-1a2 2 0 00-2 2v3.833H6z" /></svg>895 Likes</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Dentcare now offers dental implants with a 10-year warranty. Ensure you have a lasting solution for dental health.</p>
+                        <a href="#" class="text-primary font-medium hover:underline text-sm">View details...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 pt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+                <!-- Column 1: Dentacare Info -->
+                <div>
+
+                    <img src="logo.svg" alt="" style="width: 100%; max-width:100px ;" >
+                    <p class="text-sm mb-4 leading-relaxed">Dentacare is a modern dental clinic dedicated to providing quality services for the health and aesthetics of your teeth.</p>
+                    <a href="#" class="text-primary text-sm font-medium hover:underline">Read more</a>
+                    <div class="flex space-x-3 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.422.724-.665 1.56-.665 2.454 0 1.717.87 3.228 2.198 4.105-.807-.026-1.566-.247-2.229-.616v.054c0 2.393 1.704 4.386 3.961 4.84-.414.111-.85.171-1.296.171-.319 0-.628-.03-.928-.086.63 1.952 2.445 3.373 4.6 3.414-1.691 1.323-3.814 2.108-6.123 2.108-.398 0-.79-.023-1.175-.068 2.189 1.408 4.795 2.228 7.622 2.228 9.141 0 14.135-7.578 13.815-14.411l.002-.001.002-.001c.962-.692 1.795-1.556 2.458-2.548z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.011-4.85-.069c-3.25-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.644-.069-4.85s.011-3.584.069-4.85c.149-3.25 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.359 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4c2.21 0 4 1.791 4 4s-1.79 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+                    </div>
+                </div>
+                <!-- Column 2: Latest News -->
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Latest News</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-primary transition">Methods for teeth whitening <span class="block text-xs text-gray-500">February 15, 2025</span></a></li>
+                        <li><a href="#" class="hover:text-primary transition">Post-dental treatment care <span class="block text-xs text-gray-500">February 10, 2025</span></a></li>
+                        <li><a href="#" class="hover:text-primary transition">Special offer for orthodontics <span class="block text-xs text-gray-500">February 05, 2025</span></a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Contact -->
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4" id="contact">Contact</h4>
+                    <form action="#" class="space-y-3">
+                        <input type="email" placeholder="Enter Email" class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-sm focus:ring-primary focus:border-primary placeholder-gray-500">
+                        <textarea placeholder="Enter Message" rows="3" class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-sm focus:ring-primary focus:border-primary placeholder-gray-500"></textarea>
+                        <button type="submit" class="bg-primary text-white text-sm font-semibold py-2 px-4 rounded-md hover:bg-primary-darker transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                <!-- Column 4: Hours -->
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Hours</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex justify-between"><span>Monday - Tuesday:</span> <span class="text-gray-400">9.00 am - 10.00 pm</span></li>
+                        <li class="flex justify-between"><span>Wednesday - Thursday:</span> <span class="text-gray-400">10.00 am - 8.00 pm</span></li>
+                        <li class="flex justify-between"><span>Saturday - Monday:</span> <span class="text-gray-400">9.00 am - 10.00 pm</span></li>
+                        <li class="flex justify-between"><span>Sunday:</span> <button class="text-primary text-xs font-semibold py-1 px-2 border border-primary rounded hover:bg-primary hover:text-white transition">Closed</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 py-10 mt-5 grid md:grid-cols-3 gap-8 text-center md:text-left items-center">
+                <div class="flex flex-col items-center md:items-start" style="justify-content:center; align-items:center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2 6.5C2 5.12 3.12 4 4.5 4h1a1 1 0 011 1v2a1 1 0 01-1 1h-.5v1a11.5 11.5 0 0011.5 11.5h1v-.5a1 1 0 011-1h2a1 1 0 011 1v1c0 1.38-1.12 2.5-2.5 2.5C7.6 22 2 16.4 2 6.5z" />
+                      </svg>
+                                          <span class="font-semibold">Call Us</span>
+                    <span class="text-sm text-gray-400">Phone: +1 312 331 282</span>
+                </div>
+                 <div class="flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <span class="font-semibold">Address</span>
+                    <span class="text-sm text-gray-400">"Str 191 ", London, United Kingdom</span>
+                </div>
+                 <div class="flex flex-col items-center md:items-end" style="margin-right:20px;justify-content: center; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    <span class="font-semibold">Email</span>
+                    <span class="text-sm text-gray-400">info@dentalclinicexample.com</span>
+                </div>
+            </div>
+        </div>
+        <hr style="height:0.5px; color: gray; opacity: 0.3;">
+        <div class="bg-gray-800 py-4 text-center">
+            <p class="text-sm text-gray-500">Copyright 2025 Ernis Pllana  All  Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
+<link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
